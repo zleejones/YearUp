@@ -7,6 +7,11 @@ public class ReverseString {
 		
 		System.out.println(reversed);
 		
+		String originalString = "Zakir";
+		String reversedString = ReverseInPlace(originalString);
+		
+		System.out.println(reversedString);
+				
 	}
     public static String ReverseInPlace(String originalString)
     {
@@ -36,4 +41,25 @@ public class ReverseString {
     	
     	return swapString;
     }
+
+    public static String ReverseOutOfPlace(String originalString)
+    {
+    	String reversedString = null;
+    	
+    	if (originalString != null)
+    	{
+    		
+    		char[] originalStringCharacters = originalString.toCharArray();
+    		char[] reversedStringCharacters = new char[originalStringCharacters.length];
+    		
+    		for (int i = 0, j = originalStringCharacters.length;i < originalStringCharacters.length;i++,j--)
+    		{
+    			reversedStringCharacters[j] = originalStringCharacters[i];
+    		}
+    		
+    		reversedString = new String(reversedStringCharacters);
+    	}
+    	
+    	return reversedString;
+    		}
 }
